@@ -1,10 +1,7 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Recipe
-} from '../recipe.model';
+import { Component, OnInit} from '@angular/core';
+
+import { Recipe } from '../recipe.model';
+import { RecipeService } from '../../shared/service/recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -12,12 +9,11 @@ import {
   styleUrls: ['./recipe-list.component.sass']
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [
-    new Recipe('pudding chia', 'chia pudding yummi', 'https://c.pxhere.com/photos/00/41/porridge_muesli_breakfast_vegan_oatmeal_chia_cocoa_nibs_orange-1277714.jpg!d')
-  ];
+  recipes: Recipe[] = [];
 
-  constructor() {}
+  constructor(private _recipeService: RecipeService) {}
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.recipes = this._recipeService.getRecipes();
+  }
 }
