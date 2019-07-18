@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ShoppingComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/shopping-edit.component';
+import { ShoppingListService } from './components/shopping-list/shopping-list.service';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeDetailComponent } from './components/recipe/recipe-detail/recipe-detail.component';
 import { RecipeListComponent } from './components/recipe/recipe-list/recipe-list.component';
@@ -35,7 +36,7 @@ import { DropdownDirective } from './components/shared/dropdown.directive';
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
