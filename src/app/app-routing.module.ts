@@ -5,6 +5,7 @@ import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.comp
 import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -17,8 +18,9 @@ const appRoutes: Routes = [
   ]},
   { path: 'recipe', component: RecipeComponent, children: [
     { path: '', component: RecipeStartComponent },
+    { path: 'new', component: RecipeEditComponent },
     { path: ':id', component: RecipeDetailComponent },
-    { path: ':id/list', component: RecipeListComponent }
+    { path: ':id/edit', component: RecipeEditComponent }
   ]},
   { path: '**', component: NotFoundComponent }
 ];
