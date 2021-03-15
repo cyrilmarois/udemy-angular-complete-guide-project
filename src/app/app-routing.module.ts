@@ -1,10 +1,37 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-const routes: Routes = [];
+import { RecipeDetailComponent } from "./recipe/recipe-detail/recipe-detail.component";
+import { RecipeComponent } from "./recipe/recipe.component";
+import { RecipeStartComponent } from "./recipe/recipe-start/recipe-start.component";
+import { RecipeListComponent } from "./recipe/recipe-list/recipe-list.component";
+import { RecipeEditComponent } from "./recipe/recipe-edit/recipe-edit.component";
+import { ShoppingEditComponent } from "./shopping-list/shopping-edit/shopping-edit.component";
+import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
+import { NotFoundComponent } from "./not-found/not-found.component";
+
+const appRoutes: Routes = [
+  { path: "", redirectTo: "/recipe", pathMatch: "full" },
+  {
+    path: "shopping-list",
+    component: ShoppingListComponent,
+    children: [{ path: ":id/edit", component: ShoppingEditComponent }],
+  },
+  {
+    path: "recipe",
+    component: RecipeComponent,
+    children: [
+      { path: "", component: RecipeStartComponent },
+      { path: "new", component: RecipeEditComponent },
+      { path: ":id", component: RecipeDetailComponent },
+      { path: ":id/edit", component: RecipeEditComponent },
+    ],
+  },
+  { path: "**", component: NotFoundComponent },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

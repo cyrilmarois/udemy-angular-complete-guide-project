@@ -1,3 +1,4 @@
+<p>RECIPE detail works !</p>
 <div class="row">
   <div class="col-sm-12">
     <img [src]="recipe.imagePath" 
@@ -19,9 +20,9 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" ngbDropdownMenu>
-        <li><a href="#" (click)="addToShoppingList()">Go to shopping</a></li>
-        <li><a href="#">Edit recipe</a></li>
-        <li><a href="#">Delete recipe</a></li>
+        <li><a (click)="addToShoppingList()" style="cursor: pointer">To shopping List</a></li>
+        <li><a (click)="onEditRecipe()" style="cursor:pointer">Edit recipe</a></li>
+        <li><a (click)="onDeleteRecipe()" style="cursor:pointer">Delete recipe</a></li>
       </ul>
     </div>
   </div>
