@@ -11,7 +11,7 @@ export class RecipeService {
 
   private _recipes: Recipe[] = [
     new Recipe(
-      1,
+      0,
       "pudding coco chia",
       "chia pudding coco",
       "https://c.pxhere.com/photos/00/41/porridge_muesli_breakfast_vegan_oatmeal_chia_cocoa_nibs_orange-1277714.jpg!d",
@@ -24,7 +24,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
-      2,
+      1,
       "pudding matcha chia",
       "chia pudding matcha",
       "https://c.pxhere.com/photos/00/41/porridge_muesli_breakfast_vegan_oatmeal_chia_cocoa_nibs_orange-1277714.jpg!d",
